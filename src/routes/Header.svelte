@@ -21,12 +21,9 @@
                     #53d681, #46d0d5ef, #1023a1); 
             -webkit-text-fill-color: transparent; 
             -webkit-background-clip: text;
-  transform: scale(1);
-  transition: transform 125ms ease-in-out;
 }
 :global(.CanopyFont:hover){
   filter: brightness(0.5);
-  transform: scale(1.1);
   transition: transform 125ms ease-in-out;
 }
 /* Special text types */

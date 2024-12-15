@@ -35,7 +35,7 @@
                  <a href='./'> projects </a>
             </li>
             <li>
-                <a href='https://github.com/Camleaf'><img class="socials" width=75 height=75 src={githublogo} /></a>
+    
             </li>
         </ul>
     </div>
@@ -119,7 +119,6 @@ h1 {
     text-align: right;
 }
 .small_link:hover {
-    transform: scale(1.1);
     transition: transform 100ms ease-in;
     background: linear-gradient(to right, #21f36b, 
                     #53d681, #46d0d5ef, #1023a1); 
