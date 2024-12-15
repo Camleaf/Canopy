@@ -2,17 +2,17 @@
 	import Navbar from './navbar.svelte';
     import Footer from './Footer.svelte';
     import MainBody from './MainBody.svelte';
+    import projectimage from '$lib/assets/18784.jpg'
     const data = [
         {
         title: "Portfolio",
         subtitle: "-Tech and Projects",
         text: "--> Tech Stack + Projects",
-        image: "",
+        image: projectimage,
         imgloc: "left",
         link: ""
         }
     ]
-
 
 </script>
 

@@ -12,11 +12,8 @@
         <ul class="navlist" >
             <li class="CanopyFont">
             <a href='./' style="text-align:left;">
-                <h1>canopy</h1>
-            </a>
-            </li>
-            <li>
-                <img class = "logo" width=100 height=100 src={logo} />
+                <h1 style="font-size:3rem;">canopy</h1>
+            </a><!--find a good image-->
             </li>
         </ul>
     </div>

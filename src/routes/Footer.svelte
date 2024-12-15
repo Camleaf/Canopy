@@ -13,7 +13,6 @@
 
         <div class="small_text">
             <div class="titlediv"><a href='./' style="text-align:center;"> <h1 class="CanopyFont"> canopy </h1></a></div>
-            <hr>
             <h3 class="jetbrainsmono">Built with <a href={Sveltesite}><span class="SvelteColor">Svelte</span></a>, <a href={Typescriptsite}><span class="TypescriptColor">Typescript</span></a></h3>
             <ul>
                 <li>
@@ -42,13 +41,13 @@ h1 {
     padding:0;
     display: block;
     font-weight: 400;
-    font-size: 2.2rem;
+    font-size: 3rem;
 }
 .titlediv {
     display:block;
     text-align:center;
     align-content:center;
-    max-width:10%;
+    max-width:12%;
     margin:auto
 }
 
