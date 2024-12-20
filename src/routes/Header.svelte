@@ -13,7 +13,7 @@
 }
 
 :global(.CanopyFont) {
-  font-family: "Lacquer", system-ui;
+  font-family: "Lacquer", sans-serif;
   color: white;
   font-weight: 400;
   font-style: normal;

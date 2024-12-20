@@ -2,6 +2,7 @@
 	import Navbar from './navbar.svelte';
     import Footer from './Footer.svelte';
     import MainBody from './MainBody.svelte';
+    import Background from './background.svelte';
     import projectimage from '$lib/assets/18784.jpg'
     const data = [
         {
@@ -16,12 +17,13 @@
 
 </script>
 
-
-
-
+<div class="background">
+<Background></Background>
+</div>
 <div id = 'navbar'>
 <Navbar></Navbar>
 </div>
+
 
 <div>
 <MainBody {data}> </MainBody>
@@ -30,13 +32,13 @@
 
 <div>
 <Footer></Footer>
-
 </div>
 
 <style>
 
 :global(body) {
     background-color:rgb(19, 12, 30);
+    min-height: 100vh;
 }
 div {
     display:block;
@@ -44,5 +46,10 @@ div {
 
 #navbar {
     margin-bottom: 110px;
+}
+.background {
+    position: absolute;
+    display: flex;
+    z-index: -100;
 }
 </style>
