@@ -8,7 +8,7 @@
     let Sveltesite = 'https://Svelte.dev'
     let Typescriptsite = 'https://www.typescriptlang.org'
     import discordlogo from '$lib/assets/Discord-logo.png'
-</script>   S
+</script> 
 <div>
 
         <div class="small_text">

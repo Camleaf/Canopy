@@ -1,11 +1,10 @@
-<script>
-
-
+<script lang="ts">
 </script>
 
 
 <div class="container">
     <div class="bubbles">
+        
         <span style="--i:21"></span>
         <span style="--i:24"></span>
         <span style="--i:12"></span>
@@ -87,7 +86,7 @@
     0 0 50px #4fc3dc,
     0 0 100px #4fc3dc;
     animation: animate 15s linear infinite;
-    animation-duration: calc(125s/var(--i));
+    animation-duration: calc(200s/var(--i));
 
 }
 .bubbles span:nth-child(even){
@@ -98,7 +97,7 @@
 }
 @keyframes animate {
     0% {
-        transform: translateY(100vh) translateX(-100vh) scale(0);
+        transform: translateY(120vh) translateX(-200vh) scale(0);
     }
     100% {
         transform: translateY(-10vh) translateX(100vh) scale(1);

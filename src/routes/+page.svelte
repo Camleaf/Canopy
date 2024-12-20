@@ -4,7 +4,8 @@
     import MainBody from './MainBody.svelte';
     import Background from './background.svelte';
     import projectimage from '$lib/assets/18784.jpg'
-    const data = [
+    import fade from './animations.svelte'
+        const data = [
         {
         title: "Portfolio",
         subtitle: "-Tech and Projects",
@@ -14,7 +15,9 @@
         link: ""
         }
     ]
+    import { onMount } from 'svelte'
 
+//work on fade animations
 </script>
 
 <div class="background">
@@ -24,16 +27,16 @@
 <Navbar></Navbar>
 </div>
 
-
 <div>
-<MainBody {data}> </MainBody>
+    <div>
+    <MainBody {data}> </MainBody>
+    </div>
+
+
+    <div>
+    <Footer></Footer>
+    </div>
 </div>
-
-
-<div>
-<Footer></Footer>
-</div>
-
 <style>
 
 :global(body) {
@@ -48,7 +51,7 @@ div {
     margin-bottom: 110px;
 }
 .background {
-    position: absolute;
+    position: fixed;
     display: flex;
     z-index: -100;
 }
