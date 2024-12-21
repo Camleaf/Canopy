@@ -55,7 +55,8 @@
 
 :global(body) {
     background-color:rgb(19, 12, 30);
-    min-height: 100vh;
+    background-image: radial-gradient(ellipse at 0% 100% , #ffffff2c 0%,#5c5c9355 5%, rgb(19, 12, 30) 80%,rgb(25, 18, 36) 100%);
+    min-height: 100vh; /*make this gradient have a lighter edge or something, like a light source, maybe yellow*/
 }
 div {
     display:block;
