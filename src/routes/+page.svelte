@@ -4,7 +4,15 @@
     import MainBody from './MainBody.svelte';
     import Background from './background.svelte';
     import projectimage from '$lib/assets/18784.jpg'
-    import fade from './animations.svelte'
+    import {
+	blur,
+	crossfade,
+	draw,
+	fade,
+	fly,
+	scale,
+	slide
+    } from 'svelte/transition';
         const data = [
         {
         title: "Portfolio",
@@ -16,27 +24,33 @@
         }
     ]
     import { onMount } from 'svelte'
+    let ready = false;
+    onMount(() => ready = true);
+    //this onmount stops the background animation from flashing before javascript hydrates DOM
 
-//work on fade animations
+//figure out how to get stuff to fade so it looks like navbar is kinda there
 </script>
-
+{#if ready}
 <div class="background">
-<Background></Background>
+    <Background></Background>
 </div>
 <div id = 'navbar'>
-<Navbar></Navbar>
+    <Navbar></Navbar>
 </div>
 
-<div>
+<div class = 'body' >
     <div>
-    <MainBody {data}> </MainBody>
-    </div>
+        <div>
+        <MainBody {data}> </MainBody>
+        </div>
 
 
-    <div>
-    <Footer></Footer>
+        <div>
+        <Footer></Footer>
+        </div>
     </div>
 </div>
+{/if}
 <style>
 
 :global(body) {
@@ -48,11 +62,10 @@ div {
 }
 
 #navbar {
-    margin-bottom: 110px;
+    margin-bottom: 150px;
+    z-index:1
 }
-.background {
-    position: fixed;
-    display: flex;
-    z-index: -100;
+.body {
+
 }
 </style>

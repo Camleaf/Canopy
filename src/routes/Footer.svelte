@@ -47,7 +47,8 @@ h1 {
     display:block;
     text-align:center;
     align-content:center;
-    max-width:12%;
+    min-width:fit-content;
+    max-width:fit-content;
     margin:auto
 }
 

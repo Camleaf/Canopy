@@ -1,59 +1,27 @@
 <script lang="ts">
+    function generate_starts(){
+        let starts:any[] = []
+        let bubbles:number[] = [
+                            11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,11,12,13,14,15,16,17,18,19,20,21,22,23,24,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,11,12,13,14,15,16,17,18,19,20,21,22,23,24,24
+                            ].sort(() => 0.5 - Math.random());
+        for (let i:number = 0; i<bubbles.length; i++){
+            starts.push([bubbles[i],Math.floor(Math.random()*8)])
+        }
+        return starts
+    }
+    const bubbles = generate_starts()   
 </script>
 
-
+<div class="background">
 <div class="container">
     <div class="bubbles">
+        {#each bubbles as [speed,start]}
+            <span style="--start:{start};--i:{speed};"></span>
+        {/each}
         
-        <span style="--i:21"></span>
-        <span style="--i:24"></span>
-        <span style="--i:12"></span>
-        <span style="--i:16"></span>
-        <span style="--i:14"></span>
-        <span style="--i:16"></span>
-        <span style="--i:19"></span>
-        <span style="--i:22"></span>
-        <span style="--i:21"></span>
-        <span style="--i:11"></span>
-        <span style="--i:13"></span>
-        <span style="--i:14"></span>
-        <span style="--i:25"></span>
-        <span style="--i:13"></span>
-        <span style="--i:24"></span>
-        <span style="--i:20"></span>
-        <span style="--i:15"></span>
-        <span style="--i:16"></span>
-        <span style="--i:11"></span>
-        <span style="--i:17"></span>
-        <span style="--i:26"></span>
-        <span style="--i:18"></span>
-        <span style="--i:13"></span>
-        <span style="--i:21"></span>
-        <span style="--i:24"></span>
-        <span style="--i:12"></span>
-        <span style="--i:16"></span>
-        <span style="--i:14"></span>
-        <span style="--i:16"></span>
-        <span style="--i:19"></span>
-        <span style="--i:22"></span>
-        <span style="--i:21"></span>
-        <span style="--i:11"></span>
-        <span style="--i:13"></span>
-        <span style="--i:14"></span>
-        <span style="--i:25"></span>
-        <span style="--i:13"></span>
-        <span style="--i:24"></span>
-        <span style="--i:20"></span>
-        <span style="--i:15"></span>
-        <span style="--i:16"></span>
-        <span style="--i:11"></span>
-        <span style="--i:17"></span>
-        <span style="--i:26"></span>
-        <span style="--i:18"></span>
-        <span style="--i:13"></span>
     </div>
 </div>
-
+</div>
 
 
 <style>
@@ -63,7 +31,12 @@
     padding:0;
     box-sizing: border-box;
 }
-
+.background{
+    position: fixed;
+    display: flex;
+    z-index: -100;
+    top:0px;
+}
 .container{
     position: relative;
     width: 100%;
@@ -85,8 +58,8 @@
     box-shadow: 0 0 0 10px #4fc3dc44,
     0 0 50px #4fc3dc,
     0 0 100px #4fc3dc;
-    animation: animate 15s linear infinite;
-    animation-duration: calc(200s/var(--i));
+    animation: animate calc(200s/var(--i)) linear infinite;
+    animation-delay: calc(-1s * var(--start)); 
 
 }
 .bubbles span:nth-child(even){

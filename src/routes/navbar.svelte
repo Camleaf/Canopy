@@ -9,7 +9,7 @@
 
 <nav class="Nav"> 
     <div class = "container">
-        <ul class="navlist" >
+        <ul class="navlist" style='text-align:right;min-width:15%;' >
             <li class="CanopyFont">
             <a href='./' style="text-align:left;">
                 <h1 style="font-size:3rem;">canopy</h1>
@@ -17,7 +17,7 @@
             </li>
         </ul>
     </div>
-    <div class = "container" style='min-width:15%;'>
+    <div class = "container" style='min-width:5%; max-width:30'>
 
     </div>
     <div class = "container jetbrainsmono">
@@ -55,18 +55,14 @@ a {
     font-size: 1.5rem;
     position: fixed;
     top: 0px;
-    padding: 0 0 100px 0px;
-    z-index: 2;
-    background-color:rgb(19, 12, 30);
     width:100%;
+    background-color:rgb(19, 12, 30);
 }
-
 .container{
     vertical-align: middle;
     display: inline-block;
     justify-content: space-between;
     height: 10px;
-    z-index: 1;
     min-width: 40%;
     margin: 0 auto;
     padding-right: 0;
