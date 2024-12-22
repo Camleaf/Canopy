@@ -60,7 +60,7 @@
     animation-delay: calc(-1s*var(--delay));
 }
 
-.icon {
+.icon::before{
 }
 .icon:nth-child(1){
     width:150px;
@@ -71,10 +71,14 @@
     width:80px;
     height:80px;   
     position:absolute;
-}
 
+}
 .button:hover {
     opacity: 100%;
+    filter: contrast(40%) sepia(1) hue-rotate(60deg) saturate(100%);
+}
+.button:hover:nth-child(even){
+    filter: contrast(40%) sepia(1) hue-rotate(120deg) saturate(100%);
 }
 
 @-webkit-keyframes orbit {
