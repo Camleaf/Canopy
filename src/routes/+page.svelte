@@ -43,7 +43,6 @@
 
 :global(body) {
     background-color:rgb(19, 12, 30);
-    background-image: radial-gradient(at 0% 100%,#c9c9c971 0%,rgb(68, 45, 104)0%,rgb(25, 18, 36) 100%);
     min-height: 100vh; /*make this gradient have a lighter edge or something, like a light source, maybe yellow*/
     overflow: hidden; 
 }
