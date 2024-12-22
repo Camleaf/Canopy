@@ -23,13 +23,12 @@
 <div class="background">
     <Background></Background>
 </div>
-
 <div class = 'body' >
     <div>
         <div>
         <MainBody> </MainBody>
         </div>
-
+        
         <div>
             <AnimButtons></AnimButtons>
         </div>

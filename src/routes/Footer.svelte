@@ -8,6 +8,7 @@
     let Sveltesite = 'https://Svelte.dev'
     let Typescriptsite = 'https://www.typescriptlang.org'
     import discordlogo from '$lib/assets/svg/bxl-discord.svg'
+    import Header from "./Header.svelte"
 </script> 
 <div>
 
