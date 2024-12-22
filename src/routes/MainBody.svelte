@@ -1,13 +1,6 @@
 <script lang="ts">
-    let {data}:{
-        data:any;
-    } = $props()
 </script>
 
-
-{#each data as {subtitle,text,image,imgloc,link,title},index (link)}
-    {@render body_element({subtitle,text,image,imgloc,link,title})}
-{/each}
 
 
 

@@ -3,31 +3,22 @@
     import {
         blur
     }from 'svelte/transition'
-    import githublogo from '$lib/assets/pngegg.png'
-    import instagramlogo from '$lib/assets/instagram-icon-white-on-gradient.png'
+    import githublogo from '$lib/assets/svg/bxl-github.svg'
+    import instagramlogo from '$lib/assets/svg/bxl-instagram-alt.svg'
     let Sveltesite = 'https://Svelte.dev'
     let Typescriptsite = 'https://www.typescriptlang.org'
-    import discordlogo from '$lib/assets/Discord-logo.png'
+    import discordlogo from '$lib/assets/svg/bxl-discord.svg'
 </script> 
 <div>
 
         <div class="small_text">
             <div class="titlediv"><a href='./' style="text-align:center;"> <h1 class="CanopyFont"> canopy </h1></a></div>
             <h3 class="jetbrainsmono">Built with <a href={Sveltesite}><span class="SvelteColor">Svelte</span></a>, <a href={Typescriptsite}><span class="TypescriptColor">Typescript</span></a></h3>
-            <ul>
-                <li>
-                    <a href='https://www.instagram.com/_alexcedw/'><img class="socials" width={65/1.5} height={50/1.5} src={instagramlogo} /></a>
-                </li>
-                <li>
-                    <a href='https://github.com/Camleaf'><img class="socials" width={70/1.5} height={70/1.5} src={githublogo} /></a>
-                </li>
-                <li>
-                    <a href='https://discordapp.com/users/750381544035581972/'><img class="socials" width={55/1.5} height={55/1.5} src={discordlogo} /></a>
-                </li>
-            </ul>
+                    <a href='https://www.instagram.com/_alexcedw/'><img class="socials"  src={instagramlogo} /></a>
+                    <a href='https://github.com/Camleaf'><img class="socials"  src={githublogo} /></a>
+                    <a href='https://discordapp.com/users/750381544035581972/'><img class="socials"  src={discordlogo} /></a>
         </div>
 </div>
-
 <style>
 a {
     text-decoration: none;
@@ -35,7 +26,7 @@ a {
     color: white;
     vertical-align: middle;
     text-align: right;
-} 
+}
 h1 {
     margin:0;
     padding:0;
@@ -64,24 +55,19 @@ div {
     position:relative;
 }
 .socials {
-    height:75;
-    width:75;
+    display:inline-block;
+    width:45px;
+    height:45px;
     transform: scale(1);
     transition: transform 125ms ease-in-out;
+    background-clip: text;
+    
 }
 .socials:hover {
-    transform: scale(1.25);
     transition: transform 100ms ease-in;
-    filter: drop-shadow(0px 0px 0px rgb(19, 12, 30));
-}
-li {
-    display:inline-block;
-}
-.instalogo {
-
-    background: linear-gradient(to right, #21f36b, 
-                    #53d681, #46d0d5ef, #1023a1); 
-            -webkit-text-fill-color: transparent; 
-            -webkit-background-clip: text; 
+    background-image: #EC008C; /* The color you want the icon to change to */
+    background-blend-mode: overlay;
+    -webkit-filter:invert(0.5);
+    transform: scale(1.25);
 }
 </style>

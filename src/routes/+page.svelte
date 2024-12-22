@@ -1,9 +1,8 @@
 <script lang="ts">
-	import Navbar from './navbar.svelte';
     import Footer from './Footer.svelte';
     import MainBody from './MainBody.svelte';
     import Background from './background.svelte';
-    import projectimage from '$lib/assets/18784.jpg'
+    import AnimButtons from './anim_home_Buttons.svelte';
     import {
 	blur,
 	crossfade,
@@ -13,16 +12,6 @@
 	scale,
 	slide
     } from 'svelte/transition';
-        const data = [
-        {
-        title: "Portfolio",
-        subtitle: "-Tech and Projects",
-        text: "--> Tech Stack + Projects",
-        image: projectimage,
-        imgloc: "left",
-        link: ""
-        }
-    ]
     import { onMount } from 'svelte'
     let ready = false;
     onMount(() => ready = true);
@@ -34,18 +23,18 @@
 <div class="background">
     <Background></Background>
 </div>
-<div id = 'navbar'>
-    <Navbar></Navbar>
-</div>
 
 <div class = 'body' >
     <div>
         <div>
-        <MainBody {data}> </MainBody>
+        <MainBody> </MainBody>
         </div>
 
-
         <div>
+            <AnimButtons></AnimButtons>
+        </div>
+
+        <div class="footer">
         <Footer></Footer>
         </div>
     </div>
@@ -55,18 +44,21 @@
 
 :global(body) {
     background-color:rgb(19, 12, 30);
-    background-image: radial-gradient(ellipse at 0% 100% , #ffffff2c 0%,#5c5c9355 5%, rgb(19, 12, 30) 80%,rgb(25, 18, 36) 100%);
+    background-image: radial-gradient(at 0% 100%,#c9c9c971 0%,rgb(68, 45, 104)0%,rgb(25, 18, 36) 100%);
     min-height: 100vh; /*make this gradient have a lighter edge or something, like a light source, maybe yellow*/
+    overflow: hidden; 
 }
 div {
     display:block;
 }
 
-#navbar {
-    margin-bottom: 150px;
-    z-index:1
-}
 .body {
 
+}
+.footer {
+    position:fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 </style>
