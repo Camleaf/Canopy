@@ -4,6 +4,7 @@
     import projects from "$lib/assets/png/bxs-flask.png"
     import myinfo from "$lib/assets/png/bxs-id-card.png"
     import circle from "$lib/assets/png/bx-circle.png"
+    const randomstart = Math.floor(Math.random()*200)
 </script>
 
 
@@ -11,25 +12,29 @@
 
 
 <div class="container">
-    <div class="button" style="--delay:0"    >
-        <img class="icon" src={circle}>
-        <img class="icon" src={homeimage}> 
+    <a class="button" style="--delay:{0+randomstart}"    
+    href='./' draggable="false"><!-- svelte-ignore a11y_missing_attribute -->
+        <img class="icon" src={circle} draggable="false">
+        <img class="icon" src={homeimage} draggable="false"> 
 
-    </div>
-    <div class="button" style="--delay:50">
-        <img class="icon" src={circle}>
-        <img class="icon" src={myinfo}> 
+    </a>
+    <a class="button" style="--delay:{50+randomstart}"
+    href='./' draggable="false"><!-- svelte-ignore a11y_missing_attribute -->
+        <img class="icon" src={circle} draggable="false">
+        <img class="icon" src={myinfo} draggable="false"> 
 
-    </div>
-    <div class="button" style="--delay:100">
-        <img class="icon" src={circle}>
-        <img class="icon" src={projects}> 
+    </a>
+    <a class="button" style="--delay:{100+randomstart}"
+    href='./' draggable="false"><!-- svelte-ignore a11y_missing_attribute -->
+        <img class="icon" src={circle} draggable="false">
+        <img class="icon" src={projects} draggable="false"> 
 
-    </div>
-    <div class="button" style="--delay:150">
-        <img class="icon" src={circle}>
-        <img class="icon" src={runimage}> 
-    </div>
+    </a>
+    <a class="button" style="--delay:{150+randomstart}"
+    href='./' draggable="false"><!-- svelte-ignore a11y_missing_attribute -->
+        <img class="icon" src={circle} draggable="false"> 
+        <img class="icon" src={runimage} draggable="false"> 
+    </a>
 </div>
 
 
