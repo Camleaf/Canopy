@@ -1,8 +1,5 @@
 <!-- In this folder make like a bottom section saying that this was made by me with svelte or something other-->
 <script>    
-    import {
-        blur
-    }from 'svelte/transition'
     import githublogo from '$lib/assets/svg/bxl-github.svg'
     import instagramlogo from '$lib/assets/svg/bxl-instagram-alt.svg'
     let Sveltesite = 'https://Svelte.dev'
@@ -15,15 +12,17 @@
         <div class="small_text">
             <div class="titlediv"><a href='./' style="text-align:center;"> <h1 class="CanopyFont"> canopy </h1></a></div>
             <h3 class="jetbrainsmono">Built with <a href={Sveltesite}><span class="SvelteColor">Svelte</span></a>, <a href={Typescriptsite}><span class="TypescriptColor">Typescript</span></a></h3>
-                    <a href='https://www.instagram.com/_alexcedw/'><img class="socials"  src={instagramlogo} /></a>
-                    <a href='https://github.com/Camleaf'><img class="socials"  src={githublogo} /></a>
-                    <a href='https://discordapp.com/users/750381544035581972/'><img class="socials"  src={discordlogo} /></a>
+                    <a class = "insta" href='https://www.instagram.com/_alexcedw/'><img class="socials"  src={instagramlogo} /></a>
+                    <a class = "linkdefault" href='https://github.com/Camleaf'><img class="socials"  src={githublogo} /></a>
+                    <a class = "disc" href='https://discordapp.com/users/750381544035581972/'><img class="socials"  src={discordlogo} /></a>
         </div>
 </div>
 <style>
 a {
     text-decoration: none;
     padding: 0px;
+    width:45px;
+    height:45px;
     color: white;
     vertical-align: middle;
     text-align: right;
@@ -66,9 +65,15 @@ div {
 }
 .socials:hover {
     transition: transform 100ms ease-in;
-    background-image: #EC008C; /* The color you want the icon to change to */
-    background-blend-mode: overlay;
-    -webkit-filter:invert(0.5);
     transform: scale(1.25);
+}
+.linkdefault:hover {
+    filter: invert(0.5);
+}
+.insta:hover {
+    filter: contrast(40%) sepia(1) hue-rotate(300deg) saturate(100%);
+}
+.disc:hover {
+    filter: contrast(40%) sepia(1) hue-rotate(140deg) saturate(100%);
 }
 </style>

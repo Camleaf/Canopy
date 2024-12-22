@@ -2,7 +2,9 @@
     import Footer from './Footer.svelte';
     import MainBody from './MainBody.svelte';
     import Background from './background.svelte';
-    import AnimButtons from './anim_home_Buttons.svelte';
+    import AnimButtons from './animHomeButtons.svelte';
+    import AboutMe from "./aboutMe.svelte"
+    import Placeholder from "./placeholdertext.svelte"
     import {
 	blur,
 	crossfade,
@@ -13,8 +15,12 @@
 	slide
     } from 'svelte/transition';
     import { onMount } from 'svelte'
-    let ready = false;
+    let ready = $state(false);
     onMount(() => ready = true);
+    let cur_page = $state(1)
+    function pagestatehandler(new_page:number): void{
+        cur_page = new_page
+    }
     //this onmount stops the background animation from flashing before javascript hydrates DOM
 
 //figure out how to get stuff to fade so it looks like navbar is kinda there
@@ -30,11 +36,17 @@
         </div>
         
         <div>
-            <AnimButtons></AnimButtons>
+            <AnimButtons {cur_page} {pagestatehandler}></AnimButtons>
         </div>
 
         <div class="footer">
-        <Footer></Footer>
+        {#if (cur_page == 1)}
+            <Footer></Footer>
+        {:else if (cur_page == 2)}
+             <AboutMe> </AboutMe>
+        {:else}
+            <Placeholder></Placeholder>
+        {/if}
         </div>
     </div>
 </div>
@@ -55,6 +67,7 @@ div {
 }
 .footer {
     position:fixed;
+    max-width: 350px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
