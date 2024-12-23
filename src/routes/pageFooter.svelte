@@ -10,7 +10,7 @@
 <div>
 
         <div class="small_text">
-            <div class="titlediv"><a href='./' style="text-align:center;"> <h1 class="CanopyFont"> canopy </h1></a></div>
+            <div class="titlediv"><a href='./' style="text-align:center;"> <h1 class="CanopyFont titlehover"> canopy </h1></a></div>
             <h3 class="jetbrainsmono">Built with <a href={Sveltesite}><span class="SvelteColor">Svelte</span></a>, <a href={Typescriptsite}><span class="TypescriptColor">Typescript</span></a></h3>
                     <a class = "insta" href='https://www.instagram.com/_alexcedw/'><img class="socials"  src={instagramlogo} /></a>
                     <a class = "linkdefault" href='https://github.com/Camleaf'><img class="socials"  src={githublogo} /></a>
@@ -26,6 +26,10 @@ a {
     color: white;
     vertical-align: middle;
     text-align: right;
+}
+.titlehover:hover {
+    filter: brightness(0.5);
+    transition: transform 125ms ease-in-out;
 }
 h1 {
     margin:0;

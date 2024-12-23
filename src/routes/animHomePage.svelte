@@ -5,14 +5,11 @@
     import myinfo from "$lib/assets/png/bxs-id-card.png"
     import circle from "$lib/assets/png/bx-circle.png"
     const randomstart = Math.floor(Math.random()*200);
-    let { cur_page, pagestatehandler } = $props();
+    let { cur_page=0, pagestatehandler } = $props();
 </script>
 
 
 
-
-
-<div class="container">
     <button onclick={() => pagestatehandler(1)} class="button" style="--delay:{0+randomstart}"
      draggable="false"><!-- svelte-ignore a11y_missing_attribute -->
         <img class="icon" src={circle} draggable="false">
@@ -36,7 +33,6 @@
         <img class="icon" src={circle} draggable="false"> 
         <img class="icon" src={runimage} draggable="false"> 
     </button>
-</div>
 
 
 
@@ -45,12 +41,6 @@
 
 
 <style>
-.container {
-    position:fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
 .button {
     position:relative;
     display: flex;
@@ -61,8 +51,15 @@
     border: none;
     animation: orbit 200s linear infinite;
     animation-delay: calc(-1s*var(--delay));
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
 }
-
+.icon {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
 .icon:nth-child(1){
     border-radius:200%;
     width:150px;
@@ -73,6 +70,7 @@
     width:80px;
     height:80px;   
     position:absolute;
+    
 
 }
 .button:hover {

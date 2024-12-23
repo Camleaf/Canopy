@@ -17,14 +17,16 @@
   color: white;
   font-weight: 400;
   font-style: normal;
-  background: linear-gradient(to right, #21f36b, 
-                    #53d681, #46d0d5ef, #1023a1); 
+  background: linear-gradient(to right, #56e287, 
+                    #9effc0, #46d0d5ef, #5be1ff); 
             -webkit-text-fill-color: transparent; 
             -webkit-background-clip: text;
 }
-:global(.CanopyFont:hover){
-  filter: brightness(0.5);
-  transition: transform 125ms ease-in-out;
+:global(.TTTfont){
+  font-family: "Lacquer", sans-serif;
+  color: white;
+  font-weight: 400;
+  font-style: normal;
 }
 /* Special text types */
 

@@ -1,10 +1,11 @@
 <script lang="ts">
-    import Footer from './Footer.svelte';
-    import MainBody from './MainBody.svelte';
+    import Footer from './pageFooter.svelte';
     import Background from './background.svelte';
-    import AnimButtons from './animHomeButtons.svelte';
+    import AnimButtons from './animHomePage.svelte';
     import AboutMe from "./aboutMe.svelte"
-    import Placeholder from "./placeholdertext.svelte"
+    import Placeholder from "./placeHolder.svelte"
+    import GameInfo from "./gameInfo.svelte"
+    import TTTgame from "./TTTgame.svelte"
     import {
 	blur,
 	crossfade,
@@ -22,6 +23,7 @@
     function pagestatehandler(new_page:number): void{
         cur_page = new_page
     }
+    let containerstate = $derived((cur_page == 4) ? "left": "")
     //this onmount stops the background animation from flashing before javascript hydrates DOM
 
 //figure out how to get stuff to fade so it looks like navbar is kinda there
@@ -30,29 +32,27 @@
 <div class="background">
     <Background></Background>
 </div>
-<div class = 'body' >
-    <div>
-        <div>
-        <MainBody> </MainBody>
-        </div>
-        
-        <div>
+<div class = 'body' style="--height:{window.innerHeight}">
+    <div class = "container{containerstate}" style="--pos:-{window.innerWidth/4}px;"in:fade={{ easing: cubicIn, duration: 300, delay: 500}} out:fade>
             <AnimButtons {cur_page} {pagestatehandler}></AnimButtons>
-        </div>
-
-    {#if (cur_page == 1)}
-        <div class="footer" in:fade={{ easing: cubicIn, duration: 300, delay: 500}} out:fade>
-        <Footer></Footer>
-        </div>
-    {:else if (cur_page == 2)}
-        <div class="footer" in:fade={{ easing: cubicIn, duration: 300, delay: 500}} out:fade>
-            <AboutMe> </AboutMe>
+            {#if (cur_page == 1)}
+                <div class="footer" in:fade={{ easing: cubicIn, duration: 300, delay: 500}} out:fade>
+                <Footer></Footer>
+                </div>
+            {:else if (cur_page == 2)}
+                <div class="footer" in:fade={{ easing: cubicIn, duration: 300, delay: 500}} out:fade>
+                    <AboutMe> </AboutMe>
+                    </div>
+            {:else if (cur_page == 3)}
+                <div class="footer" in:fade={{ easing: cubicIn, duration: 300, delay: 500}} out:fade>
+                    <Placeholder></Placeholder>
+                </div>
+            {:else}
+            <div class="footer" style="--pos:-{window.innerWidth/4}px;" in:fade={{ easing: cubicIn, duration: 300, delay: 500}} out:fade>
+                <GameInfo></GameInfo>
+                <TTTgame></TTTgame>
             </div>
-    {:else}
-    <div class="footer" in:fade={{ easing: cubicIn, duration: 300, delay: 500}} out:fade>
-        <Placeholder></Placeholder>
-    </div>
-    {/if}
+            {/if}
     </div>
 </div>
 {/if}
@@ -60,7 +60,8 @@
 
 :global(body) {
     background-color:rgb(19, 12, 30);
-    min-height: 100vh; /*make this gradient have a lighter edge or something, like a light source, maybe yellow*/
+    min-height: calc(1px*var(--height));
+    max-height: calc(1px*var(--height));
     overflow: hidden; 
 }
 div {
@@ -68,13 +69,33 @@ div {
 }
 
 .body {
-
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
 }
 .footer {
     position:fixed;
+    min-width: 350px;
     max-width: 350px;
     top: 50%;
     left: 50%;
+    transition: transform 1000ms ease-in-out;
     transform: translate(-50%, -50%);
+}
+.container {
+    position:fixed;
+    top: 50%;
+    left: 50%;
+    transition: transform 1000ms ease-in-out;
+    transform: translate(-50% -50%);
+}
+.containerleft {
+    position:fixed;
+    top: 50%;
+    left: 50%;
+    transition: transform 1000ms ease-in-out;
+    transform: translateX(var(--pos));
+    
+
 }
 </style>
