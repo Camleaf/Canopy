@@ -6,8 +6,8 @@
     let Typescriptsite = 'https://www.typescriptlang.org'
     import discordlogo from '$lib/assets/svg/bxl-discord.svg'
     import Header from "./Header.svelte"
-
-
+    let {cur_page, pagestatehandler} = $props()
+    let windowwidth = $state(window.innerWidth)
 
     //tic tac toe function calls
     
@@ -63,7 +63,7 @@
 
 
 </script> 
-     <div class = "container" style="--width:{window.innerWidth}px;">
+     <div class = "container" style="--width:{windowwidth}px;">
         <div class="gametext CanopyFont">
             <h1>{cur_turn} {gamestate}</h1>
         </div>
@@ -78,6 +78,7 @@
         </div>
         <div class="resetbutton">
             <button class="reset CanopyFont" onclick={() => resetboard()}>Reset</button>
+            <button class="return CanopyFont" onclick={() => pagestatehandler(1)}>Return</button>
         </div>
     </div>
 <style>
@@ -137,7 +138,7 @@ div {
     width:320px;
     text-align:center;
 }
-.resetbutton:hover {
+.reset:hover {
     transform: scale(1.05);
     filter: brightness(0.75);
     transition: transform 50ms ease-in-out;
@@ -145,5 +146,31 @@ div {
 .reset {
     font-size: 1.8rem;
     border-radius: 10px;
+}
+.return{
+    font-size: 0;
+    border-radius: 10px;
+    border:none;
+}
+@media (max-width: 1430px) {
+    .container {
+    position: fixed;
+    top:-90%;
+    left:5%;    
+    transform: translateX(200vh);
+    }
+    .return {
+        font-size: 1.8rem;
+        border:black 2px outset;
+        background-color: black;
+        border-radius: 10px;
+
+        
+    }
+    .return:hover{
+        transform: scale(1.05);
+        filter: brightness(0.75);
+        transition: transform 50ms ease-in-out;
+    }
 }
 </style>

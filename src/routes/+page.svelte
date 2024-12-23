@@ -18,14 +18,19 @@
     import { cubicIn, cubicOut } from 'svelte/easing';
     import { onMount } from 'svelte'
     let ready = $state(false);
-    onMount(() => ready = true);
+    onMount(() => {
+        let tictactoemode:string = $derived((window.innerWidth > 1429) ? "both":"replace")
+        ready = true;
+    });
     let cur_page = $state(1)
     function pagestatehandler(new_page:number): void{
         cur_page = new_page
     }
     let containerstate = $derived((cur_page == 4) ? "left": "")
     //this onmount stops the background animation from flashing before javascript hydrates DOM
-
+    //tic tac toe works on desktop at minimum 1430px width and 680 height
+    //main view animation works at minimum 680 height
+    //
 //figure out how to get stuff to fade so it looks like navbar is kinda there
 </script>
 {#if ready}
@@ -50,7 +55,7 @@
             {:else}
             <div class="footer" style="--pos:-{window.innerWidth/4}px;" in:fade={{ easing: cubicIn, duration: 300, delay: 500}} out:fade>
                 <GameInfo></GameInfo>
-                <TTTgame></TTTgame>
+                <TTTgame {cur_page} {pagestatehandler}></TTTgame>
             </div>
             {/if}
     </div>
@@ -97,6 +102,16 @@ div {
     transition: transform 1000ms ease-in-out;
     transform: translateX(var(--pos));
     
+
+}
+@media (max-width: 1430px) {
+    .containerleft {
+        position:fixed;
+        top: 50%;
+        left: 50%;
+        transition: transform 1000ms ease-in-out;
+        transform: translateX(-200vh);
+    }
 
 }
 </style>

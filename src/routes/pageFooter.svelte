@@ -80,4 +80,12 @@ div {
 .disc:hover {
     filter: contrast(40%) sepia(1) hue-rotate(140deg) saturate(100%);
 }
+@media (max-width: 650px) {
+    .small_text {
+        text-align:center;
+        z-index: 2;
+        position:relative;
+        transform: translateY(-100px)
+    }
+}
 </style>

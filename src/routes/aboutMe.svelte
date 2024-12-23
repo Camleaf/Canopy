@@ -72,4 +72,12 @@ button:hover{
     background-color:#98f8b9;
 
 }
+@media (max-width: 650px) {
+    .small_text {
+        text-align:center;
+        z-index: 2;
+        position:relative;
+        transform: translateY(-100px)
+    }
+}
 </style>    

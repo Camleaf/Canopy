@@ -90,4 +90,35 @@
     from {  -webkit-transform: rotate(0deg) translateX(250px) rotate(0deg);}
     to   {  -webkit-transform: rotate(360deg) translateX(250px) rotate(-360deg);}
 }
+
+@media (max-width: 650px) {
+    .button {
+        position:relative;
+        display: none;
+        opacity: 50%;
+        justify-content: center;
+        align-items: center;
+        background: transparent;
+        border: none;
+        animation: none;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        user-select: none;
+    }
+    .button:nth-child(1) {
+        display:flex;
+        opacity: 50%;
+        transform:translateY(80px) translateX(70px);
+    }
+    .button:nth-child(2) {
+        display:flex;
+        opacity: 50%;
+        transform:translateY(80px) translateX(-70px);
+    }
+    .button:nth-child(4) {
+        display:flex;
+        opacity: 50%;
+        transform:translateY(200px);
+    }
+}
 </style>
