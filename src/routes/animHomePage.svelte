@@ -87,7 +87,7 @@
     filter: contrast(40%) sepia(1) hue-rotate(120deg) saturate(100%);
 }
 @-webkit-keyframes orbit {
-    from {  -webkit-transform: rotate(0deg) translateX(225px) rotate(0deg);}
-    to   {  -webkit-transform: rotate(360deg) translateX(225px) rotate(-360deg);}
+    from {  -webkit-transform: rotate(0deg) translateX(250px) rotate(0deg);}
+    to   {  -webkit-transform: rotate(360deg) translateX(250px) rotate(-360deg);}
 }
 </style>
