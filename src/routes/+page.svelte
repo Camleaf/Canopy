@@ -33,7 +33,7 @@
     <Background></Background>
 </div>
 <div class = 'body' style="--height:{window.innerHeight}">
-    <div class = "container{containerstate}" style="--pos:-{(window.innerWidth/4)-20}px;"in:fade={{ easing: cubicIn, duration: 300, delay: 500}} out:fade>
+    <div class = "container{containerstate}" style="--pos:-{window.innerWidth/4}px;"in:fade={{ easing: cubicIn, duration: 300, delay: 500}} out:fade>
             <AnimButtons {cur_page} {pagestatehandler}></AnimButtons>
             {#if (cur_page == 1)}
                 <div class="footer" in:fade={{ easing: cubicIn, duration: 300, delay: 500}} out:fade>
