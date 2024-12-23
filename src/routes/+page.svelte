@@ -14,6 +14,7 @@
 	scale,
 	slide
     } from 'svelte/transition';
+    import { cubicIn, cubicOut } from 'svelte/easing';
     import { onMount } from 'svelte'
     let ready = $state(false);
     onMount(() => ready = true);
@@ -39,15 +40,19 @@
             <AnimButtons {cur_page} {pagestatehandler}></AnimButtons>
         </div>
 
-        <div class="footer">
-        {#if (cur_page == 1)}
-            <Footer></Footer>
-        {:else if (cur_page == 2)}
-             <AboutMe> </AboutMe>
-        {:else}
-            <Placeholder></Placeholder>
-        {/if}
+    {#if (cur_page == 1)}
+        <div class="footer" in:fade={{ easing: cubicIn, duration: 300, delay: 500}} out:fade>
+        <Footer></Footer>
         </div>
+    {:else if (cur_page == 2)}
+        <div class="footer" in:fade={{ easing: cubicIn, duration: 300, delay: 500}} out:fade>
+            <AboutMe> </AboutMe>
+            </div>
+    {:else}
+    <div class="footer" in:fade={{ easing: cubicIn, duration: 300, delay: 500}} out:fade>
+        <Placeholder></Placeholder>
+    </div>
+    {/if}
     </div>
 </div>
 {/if}
