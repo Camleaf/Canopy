@@ -105,6 +105,13 @@ div {
 
 }
 @media (max-width: 1430px) {
+    .container {
+        position:fixed;
+        top: 50%;
+        left: 50%;
+        transition: transform 1000ms ease-in-out;
+        transform: translate(-50% -50%);
+    }
     .containerleft {
         position:fixed;
         top: 50%;
