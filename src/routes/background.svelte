@@ -76,4 +76,14 @@
         transform: translateY(-10vh) translateX(100vh) scale(1);
     }
 }
+@media (max-width: 650px) {
+    @keyframes animate {
+    0% {
+        transform: translateY(100vh) translateX(-100vh) scale(0);
+    }
+    100% {
+        transform: translateY(-10vh) translateX(10vh) scale(1);
+    }
+}
+}
 </style>
