@@ -43,26 +43,12 @@ div {
     z-index: 2;
     position:relative;
 }
-.socials {
-    display:inline-block;
-    width:45px;
-    height:45px;
-    transform: scale(1);
-    transition: transform 125ms ease-in-out;
-    background-clip: text;
-    
-}
-.socials:hover {
-    transition: transform 100ms ease-in;
-    transform: scale(1.25);
-}
-.linkdefault:hover {
-    filter: invert(0.5);
-}
-.insta:hover {
-    filter: contrast(40%) sepia(1) hue-rotate(300deg) saturate(100%);
-}
-.disc:hover {
-    filter: contrast(40%) sepia(1) hue-rotate(140deg) saturate(100%);
+@media (max-width: 650px) {
+    .small_text {
+        text-align:center;
+        z-index: 2;
+        position:relative;
+        transform: translateY(-100px)
+    }
 }
 </style>
