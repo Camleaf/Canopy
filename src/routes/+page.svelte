@@ -27,6 +27,7 @@
         cur_page = new_page
     }
     let containerstate = $derived((cur_page == 4) ? "left": "")
+    
     //this onmount stops the background animation from flashing before javascript hydrates DOM
     //tic tac toe works on desktop at minimum 1430px width and 680 height
     //main view animation works at minimum 680 height
@@ -100,7 +101,7 @@ div {
     top: 50%;
     left: 50%;
     transition: transform 1000ms ease-in-out;
-    transform: translateX(var(--pos));
+    transform: translateX(calc(var(--pos)/1.5));
     
 
 }

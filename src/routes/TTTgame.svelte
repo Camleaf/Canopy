@@ -57,7 +57,6 @@
     const textcolor:{[id:string]:string }= {
         "X":'#77ffa6',
         "O":'#64e3ff',
-        ",":'FFFFF',
     }
 
 
@@ -86,7 +85,7 @@
     position: fixed;
     top:-90%;
     left:5%;
-    transform: translateX(calc(var(--width)/2.1));
+    transform: translateX(calc(var(--width)/3));
 }
 .gamecontainer{
     display:grid;
@@ -151,6 +150,14 @@ div {
     font-size: 0;
     border-radius: 10px;
     border:none;
+}
+@media (max-width: 1662px) {
+    .container {
+    position: fixed;
+    top:-90%;
+    left:5%;
+    transform: translateX(calc(var(--width)/2.6));
+}
 }
 @media (max-width: 1430px) {
     .container {
