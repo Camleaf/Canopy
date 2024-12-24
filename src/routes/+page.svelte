@@ -6,6 +6,7 @@
     import Placeholder from "./placeHolder.svelte"
     import GameInfo from "./gameInfo.svelte"
     import TTTgame from "./TTTgame.svelte"
+    import fullInfo from "./fullInfo.svelte"
     import {
 	blur,
 	crossfade,
@@ -17,14 +18,21 @@
     } from 'svelte/transition';
     import { cubicIn, cubicOut } from 'svelte/easing';
     import { onMount } from 'svelte'
+	import FullInfo from './fullInfo.svelte';
+	import Header from './Header.svelte';
     let ready = $state(false);
     onMount(() => {
         let tictactoemode:string = $derived((window.innerWidth > 1429) ? "both":"replace")
         ready = true;
     });
     let cur_page = $state(1)
+    let substate = $state(0)
     function pagestatehandler(new_page:number): void{
         cur_page = new_page
+        substate = 0
+    }
+    function substatehandler(new_state:number): void{
+        substate = new_state
     }
     let containerstate = $derived((cur_page == 4) ? "left": "")
     
@@ -40,15 +48,19 @@
 </div>
 <div class = 'body' style="--height:{window.innerHeight}">
     <div class = "container{containerstate}" style="--pos:-{window.innerWidth/4}px;"in:fade={{ easing: cubicIn, duration: 300, delay: 500}} out:fade>
-            <AnimButtons {cur_page} {pagestatehandler}></AnimButtons>
+            <AnimButtons {substate} {cur_page} {pagestatehandler}></AnimButtons>
             {#if (cur_page == 1)}
                 <div class="footer" in:fade={{ easing: cubicIn, duration: 300, delay: 500}} out:fade>
                 <Footer></Footer>
                 </div>
+            {:else if (cur_page==2&&substate==1)} <!-- render substate before normal state-->
+            <div in:fade={{ easing: cubicIn, duration: 300, delay: 500}} out:fade>
+                <FullInfo {substate} {substatehandler}></FullInfo>
+            </div>
             {:else if (cur_page == 2)}
                 <div class="footer" in:fade={{ easing: cubicIn, duration: 300, delay: 500}} out:fade>
-                    <AboutMe> </AboutMe>
-                    </div>
+                    <AboutMe {substate} {substatehandler}> </AboutMe>
+                </div>
             {:else if (cur_page == 3)}
                 <div class="footer" in:fade={{ easing: cubicIn, duration: 300, delay: 500}} out:fade>
                     <Placeholder></Placeholder>

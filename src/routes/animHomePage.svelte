@@ -5,30 +5,30 @@
     import myinfo from "$lib/assets/png/bxs-id-card.png"
     import circle from "$lib/assets/png/bx-circle.png"
     const randomstart = Math.floor(Math.random()*200);
-    let { cur_page=0, pagestatehandler } = $props();
+    let { substate, cur_page=0, pagestatehandler } = $props();
 </script>
 
 
 
-    <button onclick={() => pagestatehandler(1)} class="button" style="--delay:{0+randomstart}"
+    <button onclick={() => pagestatehandler(1)} class="button" style="--delay:{0+randomstart};--opc:{(substate==1)?0:0.5}"
      draggable="false"><!-- svelte-ignore a11y_missing_attribute -->
         <img class="icon" src={circle} draggable="false">
         <img class="icon" src={homeimage} draggable="false"> 
 
     </button>
-    <button onclick={() => pagestatehandler(2)} class="button" style="--delay:{50+randomstart}"
+    <button onclick={() => pagestatehandler(2)} class="button" style="--delay:{50+randomstart};--opc:{(substate==1)?0:0.5}"
      draggable="false"><!-- svelte-ignore a11y_missing_attribute -->
         <img class="icon" src={circle} draggable="false">
         <img class="icon" src={myinfo} draggable="false"> 
 
     </button>
-    <button onclick={() => pagestatehandler(3)} class="button" style="--delay:{100+randomstart}"
+    <button onclick={() => pagestatehandler(3)} class="button" style="--delay:{100+randomstart};--opc:{(substate==1)?0:0.5}"
     draggable="false"><!-- svelte-ignore a11y_missing_attribute -->
         <img class="icon" src={circle} draggable="false">
         <img class="icon" src={projects} draggable="false"> 
 
     </button>
-    <button onclick={() => pagestatehandler(4)} class="button" style="--delay:{150+randomstart}"
+    <button onclick={() => pagestatehandler(4)} class="button" style="--delay:{150+randomstart};--opc:{(substate==1)?0:0.5}"
     draggable="false"><!-- svelte-ignore a11y_missing_attribute -->
         <img class="icon" src={circle} draggable="false"> 
         <img class="icon" src={runimage} draggable="false"> 
@@ -54,7 +54,13 @@
     -moz-user-select: none;
     -webkit-user-select: none;
     user-select: none;
+    opacity:var(--opc);
+    transition:
+        width 1000ms,
+        height 1000ms,
+        opacity 1000ms;
 }
+
 .icon {
     -moz-user-select: none;
     -webkit-user-select: none;

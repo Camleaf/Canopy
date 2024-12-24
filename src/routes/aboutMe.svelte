@@ -2,6 +2,7 @@
 <script>    
     let Sveltesite = 'https://Svelte.dev'
     let Typescriptsite = 'https://www.typescriptlang.org'
+    let {substate, substatehandler} = $props();
 </script> 
 <div>
 
@@ -15,10 +16,13 @@
                     <li>
                         Student at @WCI
                     </li>
-                    <li> <!-- todo: style button -->
-                        <button class="jetbrainsmono"> See full about-me</button>
+                    <li>
+                        Preffered programming language: Python
                     </li>
                 </ul>
+                <div class="resetbutton">
+                    <button class="reset CanopyFont" onclick={() => substatehandler(1)}>See full info</button>
+                </div>
             </h3>
             </div>
 </div>
@@ -56,21 +60,19 @@ div {
     z-index: 2;
     position:relative;
 }
-button {
-    font-size:1rem;
-    border-radius: 25px;
-    border:none;
-    color:white;
-    background-color:#77c4d5;
-
+.resetbutton {
+    position:fixed;
+    width:320px;
+    text-align:center;
 }
-button:hover{
-    font-size:1rem;
-    border-radius: 25px;
-    border:none;
-    color: white;
-    background-color:#98f8b9;
-
+.reset:hover {
+    transform: scale(1.05);
+    filter: brightness(0.75);
+    transition: transform 50ms ease-in-out;
+}
+.reset {
+    font-size: 1.2rem;
+    border-radius: 10px;
 }
 @media (max-width: 650px) {
     .small_text {
