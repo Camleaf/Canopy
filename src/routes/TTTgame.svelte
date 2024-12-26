@@ -180,7 +180,7 @@ div {
         transition: transform 50ms ease-in-out;
     }
 }
-@media (max-height: 530px) {
+@media (max-height: 550px) {
     @media(max-width:290px){
         .container {
             position: fixed;
