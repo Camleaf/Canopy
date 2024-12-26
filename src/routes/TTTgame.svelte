@@ -153,18 +153,18 @@ div {
 }
 @media (max-width: 1662px) {
     .container {
-    position: fixed;
-    top:-90%;
-    left:5%;
-    transform: translateX(calc(var(--width)/2.6));
-}
+        position: fixed;
+        top:-90%;
+        left:5%;
+        transform: translateX(calc(var(--width)/2.6));
+    }
 }
 @media (max-width: 1430px) {
     .container {
-    position: fixed;
-    top:-90%;
-    left:5%;    
-    transform: translateX(200vh);
+        position: fixed;
+        top:-90%;
+        left:5%;    
+        transform: translateX(200vh);
     }
     .return {
         font-size: 1.8rem;
@@ -178,6 +178,52 @@ div {
         transform: scale(1.05);
         filter: brightness(0.75);
         transition: transform 50ms ease-in-out;
+    }
+}
+@media (max-height: 530px) {
+    @media(max-width:290px){
+        .container {
+            position: fixed;
+            top:-90%;
+            left:5%;
+            transform: translateX(calc(var(--width)/2.6)) translateY(100px);
+        }   
+        .gamecontainer{
+            display:grid;
+            grid-template-columns: repeat(3,auto);
+            width:260px;
+            height:240px;
+            margin-top: 10px;
+            margin-bottom:10px; 
+        }
+        .cell{
+            width:80px;
+            height:80px;
+            text-align:center;
+            margin-right:5px;
+            margin-bottom:5px;
+            background: rgb(33, 21, 52);
+            border-radius:10px;
+            cursor: pointer;
+            
+        }
+        .container {
+            position: fixed;
+            top:-50%;
+            left:5%;    
+            transform: translateX(200vh);
+        }
+        .resetbutton {
+            position:fixed;
+            width:260px;
+            text-align:center;
+        }
+        .gametext {
+            position:fixed;
+            width:260px;
+            text-align:center;
+            transform: translateY(-60px);
+        }
     }
 }
 </style>

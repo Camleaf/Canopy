@@ -134,4 +134,31 @@ div {
     }
 
 }
+@media (max-height: 530px) {
+    @media(max-width:290px){
+        .footer {
+            position:fixed;
+            min-width: 290px;
+            max-width: 290px;
+            top: 45%;
+            left: 50%;
+            transition: transform 1000ms ease-in-out;
+            transform: translate(-50%, -50%);
+        }
+        .container {
+            position:fixed;
+            top: 45%;
+            left: 50%;
+            transition: transform 1000ms ease-in-out;
+            transform: translate(-50% -50%);
+        }
+        .containerleft {
+            position:fixed;
+            top: 45%;
+            left: 50%;
+            transition: transform 1000ms ease-in-out;
+            transform: translateX(-200vh);
+        }
+    }
+}
 </style>
