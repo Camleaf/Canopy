@@ -56,6 +56,9 @@
                 </div>
             {:else if (cur_page==2&&substate==1)} <!-- render substate before normal state-->
             <div in:fade={{ easing: cubicIn, duration: 300, delay: 500}} out:fade>
+                <div style="opacity:50%">
+                    <AboutMe {substate} {substatehandler}> </AboutMe>
+                </div>
                 <FullInfo {substate} {substatehandler}></FullInfo>
             </div>
             {:else if (cur_page == 2)}
