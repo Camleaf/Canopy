@@ -50,7 +50,7 @@ img {
 .captiontext {
     position:fixed;
     left:60%;
-    font-size: 1    rem;
+    font-size: 1rem;
 }
 .center {
     position:fixed;

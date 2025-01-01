@@ -10,25 +10,25 @@
 
 
 
-    <button onclick={() => pagestatehandler(1)} class="button" style="--delay:{0+randomstart};--opc:{(substate==1)?0:0.5}"
+    <button onclick={() => pagestatehandler(1)} class="button" style="--delay:{0+randomstart};--opc:{(substate==1)?0.2:0.5}"
      draggable="false"><!-- svelte-ignore a11y_missing_attribute -->
         <img class="icon" src={circle} draggable="false">
         <img class="icon" src={homeimage} draggable="false"> 
 
     </button>
-    <button onclick={() => pagestatehandler(2)} class="button" style="--delay:{50+randomstart};--opc:{(substate==1)?0:0.5}"
+    <button onclick={() => pagestatehandler(2)} class="button" style="--delay:{50+randomstart};--opc:{(substate==1)?0.2:0.5}"
      draggable="false"><!-- svelte-ignore a11y_missing_attribute -->
         <img class="icon" src={circle} draggable="false">
         <img class="icon" src={myinfo} draggable="false"> 
 
     </button>
-    <button onclick={() => pagestatehandler(3)} class="button" style="--delay:{100+randomstart};--opc:{(substate==1)?0:0.5}"
+    <button onclick={() => pagestatehandler(3)} class="button" style="--delay:{100+randomstart};--opc:{(substate==1)?0.2:0.5}"
     draggable="false"><!-- svelte-ignore a11y_missing_attribute -->
         <img class="icon" src={circle} draggable="false">
         <img class="icon" src={projects} draggable="false"> 
 
     </button>
-    <button onclick={() => pagestatehandler(4)} class="button" style="--delay:{150+randomstart};--opc:{(substate==1)?0:0.5}"
+    <button onclick={() => pagestatehandler(4)} class="button" style="--delay:{150+randomstart};--opc:{(substate==1)?0.2:0.5}"
     draggable="false"><!-- svelte-ignore a11y_missing_attribute -->
         <img class="icon" src={circle} draggable="false"> 
         <img class="icon" src={runimage} draggable="false"> 

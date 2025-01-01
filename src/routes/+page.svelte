@@ -28,8 +28,9 @@
     let cur_page = $state(1)
     let substate = $state(0)
     function pagestatehandler(new_page:number): void{
-        cur_page = new_page
-        substate = 0
+        if (substate==0){
+            cur_page = new_page
+        }
     }
     function substatehandler(new_state:number): void{
         substate = new_state
