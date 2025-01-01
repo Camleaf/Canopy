@@ -81,7 +81,7 @@
     min-height: calc(1px*var(--height));
     max-height: calc(1px*var(--height));
     max-width:100%;
-    overflow: hidden; 
+    overflow: scroll; 
 }
 div {
     display:block;
