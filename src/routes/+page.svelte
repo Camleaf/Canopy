@@ -55,10 +55,10 @@
                 <Footer></Footer>
                 </div>
             {:else if (cur_page==2&&substate==1)} <!-- render substate before normal state-->
+            <div style="opacity:50%" class="footer" out:fade={{ easing: cubicOut, duration: 300, delay: 700}}>
+                <AboutMe {substate} {substatehandler}> </AboutMe>
+            </div>
             <div in:fade={{ easing: cubicIn, duration: 300, delay: 500}} out:fade>
-                <div style="opacity:50%">
-                    <AboutMe {substate} {substatehandler}> </AboutMe>
-                </div>
                 <FullInfo {substate} {substatehandler}></FullInfo>
             </div>
             {:else if (cur_page == 2)}
