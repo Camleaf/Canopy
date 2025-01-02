@@ -6,8 +6,11 @@
     import Placeholder from "./placeHolder.svelte"
     import GameInfo from "./gameInfo.svelte"
     import TTTgame from "./TTTgame.svelte"
-    import fullInfo from "./fullInfo.svelte"
     import KeyDownHandling from './KeyDownHandling.svelte';
+    import { cubicIn, cubicOut } from 'svelte/easing';
+    import { onMount } from 'svelte'
+	import FullInfo from './fullInfo.svelte';
+	import Header from './Header.svelte';
     import {
 	blur,
 	crossfade,
@@ -17,10 +20,6 @@
 	scale,
 	slide
     } from 'svelte/transition';
-    import { cubicIn, cubicOut } from 'svelte/easing';
-    import { onMount } from 'svelte'
-	import FullInfo from './fullInfo.svelte';
-	import Header from './Header.svelte';
     let ready = $state(false);
     onMount(() => {
         let tictactoemode:string = $derived((window.innerWidth > 1429) ? "both":"replace")
