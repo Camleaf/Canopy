@@ -7,6 +7,7 @@
     import GameInfo from "./gameInfo.svelte"
     import TTTgame from "./TTTgame.svelte"
     import fullInfo from "./fullInfo.svelte"
+    import KeyDownHandling from './KeyDownHandling.svelte';
     import {
 	blur,
 	crossfade,
@@ -36,13 +37,13 @@
         substate = new_state
     }
     let containerstate = $derived((cur_page == 4) ? "left": "")
-    
-    //this onmount stops the background animation from flashing before javascript hydrates DOM
-    //tic tac toe works on desktop at minimum 1430px width and 680 height
-    //main view animation works at minimum 680 height
-    //
-//figure out how to get stuff to fade so it looks like navbar is kinda there
+
 </script>
+
+
+<KeyDownHandling {substate} {substatehandler}> </KeyDownHandling>
+
+
 {#if ready}
 <div class="background">
     <Background></Background>
@@ -55,7 +56,7 @@
                 <Footer></Footer>
                 </div>
             {:else if (cur_page==2&&substate==1)} <!-- render substate before normal state-->
-            <div style="opacity:50%" class="footer" out:fade={{ easing: cubicOut, duration: 300, delay: 700}}>
+            <div style="opacity:35%" class="footer" out:fade={{ easing: cubicOut, duration: 300, delay: 700}}>
                 <AboutMe {substate} {substatehandler}> </AboutMe>
             </div>
             <div in:fade={{ easing: cubicIn, duration: 300, delay: 500}} out:fade>
@@ -121,7 +122,7 @@ div {
     
 
 }
-@media (max-width: 1430px) {
+@media (max-width: 1200px) {
     .container {
         position:fixed;
         top: 50%;

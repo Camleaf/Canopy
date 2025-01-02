@@ -15,10 +15,10 @@
             <h1> I'm Alex</h1>
         </div>
         <h3 class="jetbrainsmono">
-            I'm a highschool hobbyist programmer who loves everything STEM, as well as coding and designing. 
+            I'm a highschool hobbyist programmer who loves everything STEM, primarily coding and designing. 
             <br /> 
             <br /> 
-            I code primarily in Python and Node.js, however I have been learning Svelte and Typescript.
+            I code for the most part in Python and Node.js, however I have been learning Svelte and Typescript.
             <br />
             <br />
             This year in school I am taking more advanced classes such as Pre-AP Math and grade 11 Computer Science
@@ -26,7 +26,7 @@
     </div>
     <div class="gamecontainer">
         {#each Object.entries(skillsdata) as [key,page]} <!-- add dynamic data-->
-            <a href={page.sitelink}>
+            <a href={page.sitelink} target="_blank">
                 <div class="cell" tabindex="0" onkeyup={()=>{}} role="button" > <!--add onclick event-->
                     <img src={images["/src/" + page.imagelink]}/>
                 </div>
@@ -109,6 +109,7 @@ img {
 .cell:hover{
     transition: transform 50ms ease-in-out;
     transform: scale(1.05);
+    filter: brightness(1.2);
 }
 /* add return button for mobile*/
 </style>

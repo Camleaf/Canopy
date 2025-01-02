@@ -109,6 +109,7 @@
 .cell:hover{
     transition: transform 50ms ease-in-out;
     transform: scale(1.05);
+    filter: brightness(1.2);
 }
 
 
@@ -159,7 +160,7 @@ div {
         transform: translateX(calc(var(--width)/2.6));
     }
 }
-@media (max-width: 1430px) {
+@media (max-width: 1200px) {
     .container {
         position: fixed;
         top:-90%;
@@ -205,6 +206,7 @@ div {
             background: rgb(33, 21, 52);
             border-radius:10px;
             cursor: pointer;
+            filter: brightness(1.2);
             
         }
         .container {

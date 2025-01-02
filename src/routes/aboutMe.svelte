@@ -14,7 +14,7 @@
                         Hobbyist programmer
                     </li>
                     <li>
-                        Student at @WCI
+                       Highschool Student
                     </li>
                     <li>
                         Preffered programming language: Python
