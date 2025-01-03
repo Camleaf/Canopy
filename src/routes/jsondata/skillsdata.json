@@ -1,38 +1,38 @@
 {
     "python": {
-        "imagelink": "lib/assets/svg/skillsimages/python.svg",
+        "imagelink": "lib/assets/skillsimages/python.svg",
         "sitelink": "https://python.org"
     },
     "nodejs": {
-        "imagelink": "lib/assets/svg/skillsimages/nodejs.svg",
+        "imagelink": "lib/assets/skillsimages/nodejs.svg",
         "sitelink": "https://nodejs.org"
     },
     "javascript": {
-        "imagelink": "lib/assets/svg/skillsimages/javascript.svg",
+        "imagelink": "lib/assets/skillsimages/javascript.svg",
         "sitelink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
     },
     "typescript": {
-        "imagelink": "lib/assets/svg/skillsimages/typescript.svg",
+        "imagelink": "lib/assets/skillsimages/typescript.svg",
         "sitelink": "https://typescriptlang.org"
     },
     "html": {
-        "imagelink": "lib/assets/svg/skillsimages/html.svg",
+        "imagelink": "lib/assets/skillsimages/html.svg",
         "sitelink": "https://html.com"
     },
     "css": {
-        "imagelink": "lib/assets/svg/skillsimages/css.svg",
+        "imagelink": "lib/assets/skillsimages/css.svg",
         "sitelink": "https://css3.com"
     },
     "svelte": {
-        "imagelink": "lib/assets/svg/skillsimages/svelte.svg",
+        "imagelink": "lib/assets/skillsimages/svelte.svg",
         "sitelink": "https://svelte.dev"
     },
     "blender": {
-        "imagelink": "lib/assets/svg/skillsimages/blender.svg",
+        "imagelink": "lib/assets/skillsimages/blender.svg",
         "sitelink": "https://blender.org"
     },
     "flask": {
-        "imagelink": "lib/assets/svg/skillsimages/flask.svg",
+        "imagelink": "lib/assets/skillsimages/flask.svg",
         "sitelink": "https://flask.palletsprojects.com/en/stable/';"
     }
 }

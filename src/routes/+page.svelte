@@ -1,4 +1,6 @@
 <script lang="ts">
+
+
     import Footer from './pageFooter.svelte';
     import Background from './background.svelte';
     import AnimButtons from './animHomePage.svelte';
@@ -6,11 +8,12 @@
     import Placeholder from "./placeHolder.svelte"
     import GameInfo from "./gameInfo.svelte"
     import TTTgame from "./TTTgame.svelte"
-    import KeyDownHandling from './KeyDownHandling.svelte';
+    import EventHandling from './EventHandling/KeyHandle.svelte';
     import { cubicIn, cubicOut } from 'svelte/easing';
     import { onMount } from 'svelte'
 	import FullInfo from './fullInfo.svelte';
 	import Header from './Header.svelte';
+    import ProjectsPage from './ProjectsPage.svelte';
     import {
 	blur,
 	crossfade,
@@ -20,11 +23,16 @@
 	scale,
 	slide
     } from 'svelte/transition';
+	import FullProjects from './FullProjects.svelte';
+
+
+
     let ready = $state(false);
     onMount(() => {
         let tictactoemode:string = $derived((window.innerWidth > 1429) ? "both":"replace")
         ready = true;
     });
+    //function and reactive state definitions
     let cur_page = $state(1)
     let substate = $state(0)
     function pagestatehandler(new_page:number): void{
@@ -32,15 +40,21 @@
             cur_page = new_page
         }
     }
+
+
+
     function substatehandler(new_state:number): void{
         substate = new_state
     }
+
+
+
     let containerstate = $derived((cur_page == 4) ? "left": "")
 
 </script>
 
 
-<KeyDownHandling {substate} {substatehandler}> </KeyDownHandling>
+<EventHandling {substate} {substatehandler}> </EventHandling>
 
 
 {#if ready}
@@ -48,32 +62,66 @@
     <Background></Background>
 </div>
 <div class = 'body' style="--height:{window.innerHeight}">
+
     <div class = "container{containerstate}" style="--pos:-{window.innerWidth/4}px;"in:fade={{ easing: cubicIn, duration: 300, delay: 500}} out:fade>
+            
             <AnimButtons {substate} {cur_page} {pagestatehandler}></AnimButtons>
-            {#if (cur_page == 1)}
+
+            <!-- render substate before normal state-->
+
+            {#if (cur_page==2&&substate==1)}
+                <div style="opacity:35%" class="footer" out:fade={{ easing: cubicOut, duration: 300, delay: 700}}>
+                    <AboutMe {substate} {substatehandler}> </AboutMe>
+                </div>
+
+                <div in:fade={{ easing: cubicIn, duration: 300, delay: 500}} out:fade>
+                    <FullInfo {substate} {substatehandler}></FullInfo>
+                </div>
+
+
+
+            {:else if (cur_page==3&&substate==1)}
+                <div style="opacity:35%" class="footer" out:fade={{ easing: cubicOut, duration: 300, delay: 700}}>
+                    <ProjectsPage {substate} {substatehandler}> </ProjectsPage>
+                </div>
+
+                <div in:fade={{ easing: cubicIn, duration: 300, delay: 500}} out:fade>
+                    <FullProjects {substate} {substatehandler}></FullProjects>
+                </div>
+
+
+            <!-- render normal state--> 
+            {:else if (cur_page == 1)}a
                 <div class="footer" in:fade={{ easing: cubicIn, duration: 300, delay: 500}} out:fade>
                 <Footer></Footer>
                 </div>
-            {:else if (cur_page==2&&substate==1)} <!-- render substate before normal state-->
-            <div style="opacity:35%" class="footer" out:fade={{ easing: cubicOut, duration: 300, delay: 700}}>
-                <AboutMe {substate} {substatehandler}> </AboutMe>
-            </div>
-            <div in:fade={{ easing: cubicIn, duration: 300, delay: 500}} out:fade>
-                <FullInfo {substate} {substatehandler}></FullInfo>
-            </div>
+            
+
+
+
+
             {:else if (cur_page == 2)}
                 <div class="footer" in:fade={{ easing: cubicIn, duration: 300, delay: 500}} out:fade>
                     <AboutMe {substate} {substatehandler}> </AboutMe>
                 </div>
+
+
+
             {:else if (cur_page == 3)}
                 <div class="footer" in:fade={{ easing: cubicIn, duration: 300, delay: 500}} out:fade>
-                    <Placeholder></Placeholder>
+                    <ProjectsPage {substate} {substatehandler}> </ProjectsPage>
                 </div>
+
+
+
             {:else}
             <div class="footer" style="--pos:-{window.innerWidth/4}px;" in:fade={{ easing: cubicIn, duration: 300, delay: 500}} out:fade>
                 <GameInfo></GameInfo>
                 <TTTgame {cur_page} {pagestatehandler}></TTTgame>
             </div>
+
+
+
             {/if}
     </div>
 </div>

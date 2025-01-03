@@ -1,12 +1,10 @@
 <script lang="ts">
 
     let {substate, substatehandler} = $props();
-    import PlaceHolder from "./placeHolder.svelte"
-    //fix skillsdata
     import { json } from '@sveltejs/kit';
     import skillsraw from './jsondata/skillsdata.json';
     const skillsdata: {[key:string]:any} = skillsraw
-    const images: any = import.meta.glob(['$lib/assets/svg/skillsimages/*.svg'], { eager: true, as: 'url' });
+    const images: any = import.meta.glob(['$lib/assets/skillsimages/*.svg'], { eager: true, as: 'url' });
 </script>
 
 <div class="container">
@@ -51,11 +49,6 @@ img {
     position:fixed;
     left:60%;
     font-size: 1rem;
-}
-.center {
-    position:fixed;
-    top:20%;
-    left:20%;
 }
 .resetbutton {
     position:fixed;

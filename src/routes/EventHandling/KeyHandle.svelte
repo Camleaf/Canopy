@@ -12,7 +12,6 @@
                     break;
         }
     }
-
 </script>
 
 <svelte:window

@@ -1,0 +1,7 @@
+{
+    "canopy": {
+        "imagelink": "lib/assets/projectimages/canopy.svg",
+        "sitelink": "https://canopytree.vercel.app",
+        "textdata": "Canopy <br> Built with HTML, CSS, Svelte, and Typescript <br> V1 of my the website that you are currently looking at. All icons provided by Boxicons and brand images provided by Wikipedia "
+    }
+}
