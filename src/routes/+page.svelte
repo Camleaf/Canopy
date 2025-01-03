@@ -70,7 +70,7 @@
             <!-- render substate before normal state-->
 
             {#if (cur_page==2&&substate==1)}
-                <div style="opacity:35%" class="footer" out:fade={{ easing: cubicOut, duration: 300, delay: 700}}>
+                <div style="opacity:20%" class="footer" out:fade={{ easing: cubicOut, duration: 300, delay: 700}}>
                     <AboutMe {substate} {substatehandler}> </AboutMe>
                 </div>
 
@@ -81,7 +81,7 @@
 
 
             {:else if (cur_page==3&&substate==1)}
-                <div style="opacity:35%" class="footer" out:fade={{ easing: cubicOut, duration: 300, delay: 700}}>
+                <div style="opacity:20%" class="footer" out:fade={{ easing: cubicOut, duration: 300, delay: 700}}>
                     <ProjectsPage {substate} {substatehandler}> </ProjectsPage>
                 </div>
 
