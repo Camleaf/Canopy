@@ -1,9 +1,9 @@
 <script lang="ts">
-    import homeimage from "$lib/assets/png/bx-home.png"
-    import runimage from "$lib/assets/png/bxs-right-arrow.png"
-    import projects from "$lib/assets/png/bxs-flask.png"
-    import myinfo from "$lib/assets/png/bxs-id-card.png"
-    import circle from "$lib/assets/png/bx-circle.png"
+    import homeimage from "$lib/assets/genericpng/bx-home.png"
+    import runimage from "$lib/assets/genericpng/bxs-right-arrow.png"
+    import projects from "$lib/assets/genericpng/bxs-flask.png"
+    import myinfo from "$lib/assets/genericpng/bxs-id-card.png"
+    import circle from "$lib/assets/genericpng/bx-circle.png"
     const randomstart = Math.floor(Math.random()*200);
     let { substate, cur_page=0, pagestatehandler } = $props();
 </script>
