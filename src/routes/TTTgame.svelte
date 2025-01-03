@@ -1,10 +1,7 @@
 <!-- In this folder make like a bottom section saying that this was made by me with svelte or something other-->
 <script lang=ts>    
-    import githublogo from '$lib/assets/svg/bxl-github.svg'
-    import instagramlogo from '$lib/assets/svg/bxl-instagram-alt.svg'
     let Sveltesite = 'https://Svelte.dev'
     let Typescriptsite = 'https://www.typescriptlang.org'
-    import discordlogo from '$lib/assets/svg/bxl-discord.svg'
     import Header from "./Header.svelte"
     let {cur_page, pagestatehandler} = $props()
     let windowwidth = $state(window.innerWidth)
