@@ -74,12 +74,17 @@ div {
     font-size: 1.2rem;
     border-radius: 10px;
 }
-@media (max-width: 650px) {
+@media (max-width: 700px) {
     .small_text {
         text-align:center;
         z-index: 2;
         position:relative;
         transform: translateY(-100px)
+    }
+    .reset {
+        border: none !important;
+        font-size:0;
+        
     }
 }
 </style>    
