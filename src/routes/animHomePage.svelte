@@ -8,7 +8,7 @@
     let { substate, cur_page=0, pagestatehandler } = $props();
 </script>
 
-
+<div>
     <button onclick={() => pagestatehandler(1)} class="button" style="--delay:{0+randomstart};--opc:{(substate==1)?0.15:0.5}"
      draggable="false"><!-- svelte-ignore a11y_missing_attribute -->
         <img class="icon" src={circle} draggable="false">
@@ -32,7 +32,7 @@
         <img class="icon" src={circle} draggable="false"> 
         <img class="icon" src={runimage} draggable="false"> 
     </button>
-
+</div>  
 
 
 

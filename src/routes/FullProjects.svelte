@@ -51,11 +51,12 @@ img {
 }
 .data {
     display: grid;
-    grid-template-columns: 120px 1fr 1fr;
+    grid-template-columns: 120px 1fr;
+    max-height:150px;
     column-gap: 5px;
 }
 .textfilter {
-    margin-right:-383px;
+    max-width: 790px;
     transform: translateY(-15px) translateX(30px);
 }
 .captiontext {
@@ -116,8 +117,10 @@ img {
     align-items: center;
     width:140px;
     height:140px;
-    margin-right:5px;
-    margin-bottom:30px;
+    margin-top:5px;
+    margin-left:5px;
+    margin-right:0px;
+    margin-bottom:25px;
     background: rgb(33, 21, 52);
     border-radius:10px;
     cursor: pointer;
