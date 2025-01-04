@@ -49,6 +49,9 @@ img {
     height:65%;
     border-radius:20px;
 }
+a {
+    height:140px;
+}
 .data {
     display: grid;
     grid-template-columns: 120px 1fr;
