@@ -7,7 +7,7 @@
 <div>
 
         <div class="small_text">
-            <div class="titlediv"><a href='./' style="text-align:center;"> <h1 class="CanopyFont"> I'm Alex </h1></a></div>
+            <div class="titlediv"><a href='./' style="text-align:center;"> <h1 class="CanopyFont"> I'm Camleaf</h1></a></div>
             <h3 class="jetbrainsmono" style="text-align:left;">
                 <ul>
                     <li>
