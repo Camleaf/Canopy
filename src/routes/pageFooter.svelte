@@ -12,7 +12,7 @@
         <div class="small_text">
             <div class="titlediv"><a href='./' style="text-align:center;"> <h1 class="CanopyFont titlehover"> canopy </h1></a></div>
             <h3 class="jetbrainsmono">Built with <a target="_blank" href={Sveltesite}><span class="SvelteColor">Svelte</span></a>, <a target="_blank" href={Typescriptsite}><span class="TypescriptColor">Typescript</span></a></h3>
-                    <a target="_blank" class = "insta" href='https://www.instagram.com/_alexcedw/'><img class="socials"  src={instagramlogo} /></a>
+                    
                     <a target="_blank" class = "linkdefault" href='https://github.com/Camleaf'><img class="socials"  src={githublogo} /></a>
                     <a target="_blank" class = "disc" href='https://discordapp.com/users/750381544035581972/'><img class="socials"  src={discordlogo} /></a>
         </div>

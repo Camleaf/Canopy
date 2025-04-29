@@ -10,7 +10,7 @@
 <div class="container">
     <div class="captiontext">
         <div class="CanopyFont">
-            <h1> I'm Alex</h1>
+            <h1> I'm Camleaf</h1>
         </div>
         <h3 class="jetbrainsmono">
             I'm a highschool hobbyist programmer who loves everything STEM, primarily coding and designing. 
